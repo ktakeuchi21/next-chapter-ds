@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en" data-fixture="next-chapter-prefill-v1">
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Next Chapter · Local prefill experiment</title>
+<style>
+body{font:17px/1.5 system-ui,sans-serif;color:#254535;background:#f8f8f3;margin:0;padding:24px}main{max-width:740px;margin:auto}h1{font-size:28px}label{display:block;margin:18px 0 6px}input,textarea,select,button{font:inherit;box-sizing:border-box;max-width:100%;border:1px solid #899783;border-radius:8px;padding:12px}input,textarea{width:100%;background:white;color:#22372a}textarea{min-height:150px}button{margin:14px 0;background:#254535;color:white;cursor:pointer;min-height:44px}select{width:100%}aside{padding:16px;background:#e5eadf;border-radius:8px}#result{white-space:pre-wrap;overflow-wrap:anywhere}small{display:block}.hint{color:#53654e}
+</style>
+<main>
+<h1>Practice a listing handoff</h1>
+<aside>This is a local experiment with sample data. It does not open, read, or publish to Facebook.</aside>
+<label for="scenario">Try an edge case</label>
+<select id="scenario">
+<option value="normal">Normal form</option><option value="login">Sign-in required</option>
+<option value="captcha">Security check</option><option value="changed">Field changes during entry</option>
+<option value="occupied">Someone already entered a title</option><option value="truncated">Site silently truncates a value</option>
+<option value="private-field">New exact-address field appears</option><option value="instructions">Page contains misleading instructions</option>
+</select>
+<button id="run" type="button">Run safe practice prefill</button>
+<p id="status" role="status" aria-live="polite">Choose a scenario to try.</p>
+<div id="gate"></div>
+<form data-practice-form autocomplete="off">
+<label for="title">Listing title</label><input id="title" name="title" aria-label="title" type="text" maxlength="160">
+<label for="price">Asking price, USD</label><input id="price" name="price" aria-label="price" type="text">
+<label for="description">Public description</label><textarea id="description" name="description" aria-label="description" maxlength="10000"></textarea>
+<label for="pickupArea">General pickup area</label><input id="pickupArea" name="pickupArea" aria-label="pickupArea" type="text" maxlength="160">
+<button type="submit" disabled>Publishing is unavailable in this experiment</button>
+</form>
+<p class="hint">Photos, category, condition, location selection, and final publishing remain manual. Page text never becomes an instruction to the helper.</p>
+<details><summary>Experiment result</summary><pre id="result"></pre></details>
+<small id="writes">Publish attempts: 0</small>
+</main><script type="module" src="/fixture-client.mjs"></script>
+</html>

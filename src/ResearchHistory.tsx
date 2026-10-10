@@ -1,0 +1,25 @@
+import {useEffect,useRef,useState} from 'react';
+import {ChevronDown,ExternalLink} from 'lucide-react';
+import {api} from './api';
+import type {Research} from '../shared/domain';
+import type {ResearchRun,ResearchHistoryPage,SavedResearch} from '../shared/research-history';
+import {safeExternalUrl} from '../shared/domain';
+const dateLabel=(date:string)=>Number.isFinite(Date.parse(date))?new Date(date).toLocaleString(undefined,{year:'numeric',month:'short',day:'numeric',hour:'numeric',minute:'2-digit',second:'2-digit'}):'Date unavailable';
+function SavedReport({report}:{report:SavedResearch}){return <article className="research-report"><p className="saved-search-note">Saved results from this search · {dateLabel(report.researchedAt)}</p><p className="report-text">{report.text}</p>{report.sources.length>0&&<><h3>Sources from this search</h3>{report.sources.filter(s=>safeExternalUrl(s.url)).map((s,i)=><a href={s.url} target="_blank" rel="noreferrer" key={s.url+i}>{s.title}<ExternalLink size={14} aria-hidden="true"/></a>)}</>}</article>;}
+function HistoryRow({itemId,run,latest}:{itemId:string;run:ResearchRun;latest:boolean}){
+ const [open,setOpen]=useState(false),[result,setResult]=useState<{report:SavedResearch|null;message:string|null}|null>(null),[error,setError]=useState(''),[retry,setRetry]=useState(0);
+ useEffect(()=>{if(!open)return;let active=true;setResult(null);setError('');api<{report:SavedResearch|null;message:string|null}>(`/items/${itemId}/research-history/${run.id}`).then(r=>{if(active)setResult(r);}).catch(e=>{if(active)setError(e.message);});return()=>{active=false;};},[open,itemId,run.id,run.state,retry]);
+ const state=run.state==='completed'?'View results':run.state==='running'?'Searching…':run.state==='queued'?'Queued':'Failed';
+ return <details className="research-history-row" onToggle={e=>setOpen(e.currentTarget.open)}>
+  <summary><span><time dateTime={run.createdAt}>{dateLabel(run.createdAt)}</time>{latest&&<small>Latest saved results</small>}</span><span className={`history-state ${run.state}`}>{state}</span><ChevronDown size={18} aria-hidden="true"/></summary>
+  <div className="history-result">{error?<div role="alert"><p>{error}</p><button onClick={()=>setRetry(n=>n+1)}>Try loading results again</button></div>:!result?<p role="status">Loading saved results…</p>:result.report?<SavedReport report={result.report}/>:<p>{result.message||'This search is still in progress. Its results will appear when it finishes.'}</p>}</div>
+ </details>;
+}
+export function ResearchHistory({itemId,revision,savedReport}:{itemId:string;revision:string;savedReport:Research|null}){
+ const generation=useRef(0);
+ const [page,setPage]=useState<ResearchHistoryPage|null>(null),[error,setError]=useState(''),[loading,setLoading]=useState(true),[moreLoading,setMoreLoading]=useState(false),[retry,setRetry]=useState(0);
+ useEffect(()=>{let active=true;generation.current++;setMoreLoading(false);setLoading(true);setError('');api<ResearchHistoryPage>(`/items/${itemId}/research-history`).then(r=>{if(active)setPage(r);}).catch(e=>{if(active)setError(e.message);}).finally(()=>{if(active)setLoading(false);});return()=>{active=false;generation.current++;};},[itemId,revision,retry]);
+ async function more(){if(!page?.nextCursor||loading||moreLoading)return;const requestGeneration=generation.current;setMoreLoading(true);setError('');try{const next=await api<ResearchHistoryPage>(`/items/${itemId}/research-history?before=${encodeURIComponent(page.nextCursor)}`);if(generation.current!==requestGeneration)return;setPage(old=>({runs:[...new Map([...(old?.runs||[]),...next.runs].map(r=>[r.id,r])).values()],nextCursor:next.nextCursor}));}catch(e){if(generation.current===requestGeneration)setError((e as Error).message);}finally{if(generation.current===requestGeneration)setMoreLoading(false);}}
+ const latest=page?.runs.find(r=>r.state==='completed'&&r.hasReport)?.id;
+ return <section id="research-history" tabIndex={-1} className="research-history" aria-label="Research history"><h2>Research history</h2><p>Open a search to see its saved results and sources. Viewing past results doesn’t run another search.</p>{loading&&<p role="status">Loading research history…</p>}{error&&<div role="alert"><p>{error}</p><button disabled={loading} onClick={()=>setRetry(n=>n+1)}>Reload history</button></div>}{page?.runs.map(run=><HistoryRow key={run.id} itemId={itemId} run={run} latest={run.id===latest}/>)}{!loading&&!error&&page&&!page.runs.length&&(savedReport?<details className="research-history-row"><summary><span><time dateTime={savedReport.researchedAt}>{dateLabel(savedReport.researchedAt)}</time><small>Saved report</small></span><span>View results</span><ChevronDown size={18} aria-hidden="true"/></summary><div className="history-result"><SavedReport report={savedReport}/></div></details>:<p>No searches yet. Use Identify from photos to start.</p>)}{page?.nextCursor&&<button disabled={loading||moreLoading} className="history-more" onClick={()=>void more()}>{moreLoading?'Loading older searches…':'Load older searches'}</button>}</section>;
+}

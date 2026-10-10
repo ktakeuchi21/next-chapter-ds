@@ -1,0 +1,66 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "next-chapter-ds",
+  "main": "server/index.ts",
+  "compatibility_date": "2026-09-01",
+  "compatibility_flags": [
+    "nodejs_compat"
+  ],
+  "assets": {
+    "directory": "./dist",
+    "binding": "ASSETS",
+    "not_found_handling": "single-page-application",
+    "run_worker_first": [
+      "/api/*"
+    ]
+  },
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "next-chapter",
+      "database_id": "00000000-0000-0000-0000-000000000000",
+      "migrations_dir": "migrations",
+      "preview_database_id": "00000000-0000-0000-0000-000000000001"
+    }
+  ],
+  "r2_buckets": [
+    {
+      "binding": "MEDIA",
+      "bucket_name": "next-chapter-media"
+    },
+    {
+      "binding": "BACKUPS",
+      "bucket_name": "next-chapter-backups"
+    }
+  ],
+  "workflows": [
+    {
+      "binding": "ITEM_WORKFLOW",
+      "name": "next-chapter-item-workflow",
+      "class_name": "ItemWorkflow"
+    }
+  ],
+  "vars": {
+    "LOCAL_DEV": "false",
+    "RESEARCH_MODEL": "gpt-4.1",
+    "TRANSCRIPTION_MODEL": "gpt-4o-mini-transcribe",
+    "DAILY_AI_JOBS": "30",
+    "ACCESS_TEAM_DOMAIN": "",
+    "ACCESS_AUD": "",
+    "ALLOWED_EMAILS": "",
+    "MARKETPLACE_CONNECTIONS_ENABLED": "false",
+    "MARKETPLACE_APP_URL": "https://next-chapter.example.com",
+    "EBAY_ENVIRONMENT": "sandbox",
+    "BACKUPS_ENABLED": "false"
+  },
+  "triggers": {
+    "crons": [
+      "*/5 * * * *"
+    ]
+  },
+  "observability": {
+    "enabled": true,
+    "head_sampling_rate": 0.1
+  },
+  "preview_urls": false
+}

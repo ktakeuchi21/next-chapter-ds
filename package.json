@@ -1,0 +1,49 @@
+{
+  "name": "next-chapter-ds",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite --host 127.0.0.1",
+    "dev:api": "wrangler dev --ip 127.0.0.1 --port 8787",
+    "build": "npm run build:extension && tsc --noEmit && vite build",
+    "typecheck": "tsc --noEmit",
+    "db:migrate": "wrangler d1 migrations apply next-chapter --local",
+    "seed": "node scripts/seed.mjs",
+    "test": "vitest run",
+    "test:integration": "node --test tests/integration.test.mjs",
+    "deploy": "npm run build && node scripts/deploy.mjs",
+    "test:workflow": "node --test tests/workflow.test.mjs",
+    "backup:local": "node scripts/backup-local.mjs",
+    "backup:cloud": "node scripts/backup-cloud.mjs",
+    "test:marketplaces": "node --test tests/marketplace-integration.mjs",
+    "test:marketplace-runtime": "node --test tests/marketplace-runtime.test.mjs",
+    "test:backup-restore": "node --test tests/backup-restore.test.mjs",
+    "check": "node scripts/check-all.mjs",
+    "build:extension": "node scripts/build-extension.mjs"
+  },
+  "dependencies": {
+    "@vitejs/plugin-react": "latest",
+    "hono": "latest",
+    "jose": "latest",
+    "lucide-react": "latest",
+    "react": "latest",
+    "react-dom": "latest",
+    "vite": "latest",
+    "zod": "latest"
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "latest",
+    "@types/node": "latest",
+    "@types/react": "latest",
+    "@types/react-dom": "latest",
+    "fake-indexeddb": "^6.2.5",
+    "typescript": "latest",
+    "vitest": "latest",
+    "wrangler": "latest"
+  },
+  "description": "An inventory and resale workspace with photo and voice intake, AI research, reviewed listing drafts, and a Chrome helper.",
+  "engines": {
+    "node": ">=24.0.0"
+  }
+}
