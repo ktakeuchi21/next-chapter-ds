@@ -1,0 +1,143 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="968" viewBox="0 0 1000 968" role="img" aria-label="Next Chapter: capture photos and voice, understand the item, research a price, prepare listings, sell and sync, then fulfill. Automatic sale monitoring and delisting are planned.">
+  <title>Next Chapter: from intake to a new home</title>
+  <desc>A couch connects six illustrated steps: a photo and voice waveform, identification with a magnifier, price comparisons, reviewed listing cards, a sale and other listings closing, then a parcel or pickup truck. Listing publication is assisted. Automatic sale monitoring and delisting are planned.</desc>
+  <rect width="1000" height="968" rx="12" fill="#faf9f6"/>
+  <g font-family="Arial, Helvetica, sans-serif" fill="#27332e">
+    <text x="48" y="53" font-size="21" font-weight="700" letter-spacing="3" fill="#3b594c">NEXT CHAPTER</text>
+    <text x="48" y="111" font-family="Georgia, serif" font-size="49">From intake to a new home.</text>
+    <text x="48" y="153" font-size="25" fill="#60675f">One item record. Every step connected.</text>
+    <g fill="none" stroke="#3b594c" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M467 312h58m-9-8 10 8-10 8M743 421v36m-8-9 8 10 8-10M533 574h-58m9-8-10 8 10 8M257 683v36m-8-9 8 10 8-10M467 836h58m-9-8 10 8-10 8"/>
+    </g>
+    <g data-workflow-stage="capture" transform="translate(48 204)">
+      <rect width="418" height="216" rx="12" fill="#edf0e9" stroke="#c7d1c3" stroke-width="2"/>
+      <rect data-highlight="capture" x="1" y="1" width="416" height="214" rx="11" fill="none" stroke="#3b594c" stroke-width="4" opacity="0"/>
+      <text x="28" y="42" font-size="23" font-weight="700" fill="#3b594c">01</text>
+      <g transform="translate(234 14)" stroke="#3b594c" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round">
+        <rect x="3" y="6" width="126" height="83" rx="8" fill="#faf9f6" stroke="#a8b9a0"/>
+        <g data-motion="couch">
+          <path d="M28 47V33q0-10 10-10h55q10 0 10 10v14" fill="#bdcbb3"/>
+          <path d="M22 44q7 0 7 7v7h73v-7q0-7 7-7t7 7v22H15V51q0-7 7-7Z" fill="#d3ddc9"/>
+          <path d="M24 74v6m82-6v6M66 27v26" fill="none"/>
+        </g>
+        <g data-motion="camera">
+          <path d="M111 17h10l5-7h19l5 7h10v35h-49Z" fill="#faf9f6"/>
+          <circle cx="136" cy="34" r="10" fill="#d3ddc9"/>
+          <path d="M154 24h1"/>
+        </g>
+        <g stroke-width="5" data-motion="voice"><path d="M128 70v10M138 63v24M148 58v34M158 68v14" fill="none"/></g>
+      </g>
+      <text x="28" y="145" font-size="40" font-weight="600">Capture</text>
+      <text x="28" y="187" font-size="26" fill="#505c53">Photos + voice notes</text>
+    </g>
+    <g data-workflow-stage="understand" transform="translate(534 204)">
+      <rect width="418" height="216" rx="12" fill="#edf0e9" stroke="#c7d1c3" stroke-width="2"/>
+      <rect data-highlight="understand" x="1" y="1" width="416" height="214" rx="11" fill="none" stroke="#3b594c" stroke-width="4" opacity="0"/>
+      <text x="28" y="42" font-size="23" font-weight="700" fill="#3b594c">02</text>
+      <g transform="translate(236 14)" stroke="#3b594c" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round">
+        <rect x="2" y="6" width="96" height="80" rx="8" fill="#faf9f6" stroke="#a8b9a0"/>
+        <path d="M23 42V31q0-8 8-8h36q8 0 8 8v11" fill="#bdcbb3"/>
+        <path d="M18 40q6 0 6 6v6h50v-6q0-6 6-6t6 6v18H12V46q0-6 6-6Z" fill="#d3ddc9"/>
+        <path d="M21 65v6m56-6v6M49 26v22" fill="none"/>
+        <g data-motion="magnifier">
+          <circle cx="106" cy="32" r="22" fill="#faf9f6" fill-opacity=".65"/>
+          <path d="m122 49 23 23" stroke-width="7"/>
+          <path d="m97 32 6 6 12-14" fill="none"/>
+        </g>
+        <g data-motion="identity">
+          <rect x="55" y="68" width="108" height="34" rx="6" fill="#3b594c" stroke="none"/>
+          <text x="109" y="92" text-anchor="middle" fill="#faf9f6" stroke="none" font-size="23" font-weight="600">Couch</text>
+        </g>
+      </g>
+      <text x="28" y="145" font-size="40" font-weight="600">Understand</text>
+      <text x="28" y="187" font-size="26" fill="#505c53">Parse fields + identify</text>
+    </g>
+    <g data-workflow-stage="price" transform="translate(534 466)">
+      <rect width="418" height="216" rx="12" fill="#edf0e9" stroke="#c7d1c3" stroke-width="2"/>
+      <rect data-highlight="price" x="1" y="1" width="416" height="214" rx="11" fill="none" stroke="#3b594c" stroke-width="4" opacity="0"/>
+      <text x="28" y="42" font-size="23" font-weight="700" fill="#3b594c">03</text>
+      <g transform="translate(244 14)" stroke="#3b594c" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round">
+        <rect x="0" y="6" width="102" height="89" rx="8" fill="#faf9f6" stroke="#a8b9a0"/>
+        <g data-motion="comparisons" fill="#bdcbb3" stroke="none">
+          <rect data-bar="1" x="14" y="53" width="18" height="27" rx="3"/>
+          <rect data-bar="2" x="41" y="35" width="18" height="45" rx="3"/>
+          <rect data-bar="3" x="68" y="20" width="18" height="60" rx="3"/>
+        </g>
+        <path d="M12 83h76" fill="none"/>
+        <g data-motion="price-tag">
+          <path d="M111 30h33v61h-53V51Z" fill="#3b594c"/>
+          <circle cx="114" cy="44" r="3" fill="#faf9f6" stroke="none"/>
+          <text x="119" y="80" text-anchor="middle" fill="#faf9f6" stroke="none" font-size="34" font-weight="600">$</text>
+        </g>
+      </g>
+      <text x="28" y="145" font-size="40" font-weight="600">Price</text>
+      <text x="28" y="187" font-size="26" fill="#505c53">Research + compare</text>
+    </g>
+    <g data-workflow-stage="listings" transform="translate(48 466)">
+      <rect width="418" height="216" rx="12" fill="#edf0e9" stroke="#c7d1c3" stroke-width="2"/>
+      <rect data-highlight="listings" x="1" y="1" width="416" height="214" rx="11" fill="none" stroke="#3b594c" stroke-width="4" opacity="0"/>
+      <text x="28" y="42" font-size="23" font-weight="700" fill="#3b594c">04</text>
+      <g transform="translate(244 14)" stroke="#3b594c" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round">
+        <g data-motion="listing-back">
+          <rect x="6" y="4" width="94" height="84" rx="7" fill="#d3ddc9" stroke="#a8b9a0"/>
+          <path d="M17 19h42m-42 12h26" fill="none" stroke="#a8b9a0"/>
+        </g>
+        <g data-motion="listing-front">
+          <rect x="36" y="17" width="94" height="84" rx="7" fill="#faf9f6"/>
+          <path d="M56 49V35h40v14" fill="#bdcbb3"/>
+          <path d="M50 45h8v10h36V45h8v19H50Z" fill="#d3ddc9"/>
+          <path d="M51 78h42m-42 11h27" fill="none" stroke="#a8b9a0"/>
+        </g>
+        <g data-motion="review">
+          <circle cx="126" cy="77" r="23" fill="#3b594c"/>
+          <path d="m116 77 7 7 13-15" fill="none" stroke="#faf9f6"/>
+        </g>
+      </g>
+      <text x="28" y="145" font-size="40" font-weight="600">Prepare listings</text>
+      <text x="28" y="187" font-size="26" fill="#505c53">Channel, copy + review</text>
+    </g>
+    <g data-workflow-stage="sync" transform="translate(48 728)">
+      <rect width="418" height="216" rx="12" fill="#f7efdf" stroke="#97712f" stroke-width="2" stroke-dasharray="9 7"/>
+      <rect data-highlight="sync" x="1" y="1" width="416" height="214" rx="11" fill="none" stroke="#97712f" stroke-width="4" opacity="0"/>
+      <text x="28" y="42" font-size="23" font-weight="700" fill="#76551e">05</text>
+      <rect x="28" y="62" width="185" height="34" rx="17" fill="#ead8b3"/>
+      <text x="121" y="85" text-anchor="middle" font-size="19" font-weight="700" fill="#684a19">SYNC PLANNED</text>
+      <g transform="translate(244 14)" stroke="#97712f" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round">
+        <rect x="4" y="9" width="65" height="67" rx="7" fill="#faf9f6"/>
+        <rect x="78" y="30" width="65" height="67" rx="7" fill="#faf9f6"/>
+        <g data-motion="closed-listing">
+          <path d="M94 47h33m-33 11h23m-23 11h29" fill="none" stroke="#bca779"/>
+          <path d="m92 85 40-44" fill="none"/>
+        </g>
+        <g data-motion="sold">
+          <rect x="0" y="19" width="84" height="38" rx="6" fill="#76551e" stroke="none"/>
+          <text x="42" y="46" text-anchor="middle" fill="#faf9f6" stroke="none" font-size="24" font-weight="700">SOLD</text>
+        </g>
+        <path d="M31 84v10h33m-8-7 8 7-8 7" fill="none"/>
+      </g>
+      <text x="28" y="145" font-size="40" font-weight="600">Sell + sync</text>
+      <text x="28" y="187" font-size="26" fill="#76551e">Monitor sales + delist</text>
+    </g>
+    <g data-workflow-stage="fulfill" transform="translate(534 728)">
+      <rect width="418" height="216" rx="12" fill="#edf0e9" stroke="#c7d1c3" stroke-width="2"/>
+      <rect data-highlight="fulfill" x="1" y="1" width="416" height="214" rx="11" fill="none" stroke="#3b594c" stroke-width="4" opacity="0"/>
+      <text x="28" y="42" font-size="23" font-weight="700" fill="#3b594c">06</text>
+      <g transform="translate(236 14)" stroke="#3b594c" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round">
+        <g data-motion="parcel">
+          <path d="m9 22 30-12 31 12v39L39 75 9 61Z" fill="#d3ddc9"/>
+          <path d="m9 22 30 12 31-12M39 34v41M25 16l30 12v15" fill="none"/>
+        </g>
+        <g data-motion="truck">
+          <path d="M66 83V44h51v39m0-33h19l16 20v13H66" fill="#faf9f6"/>
+          <path d="M123 57h10l10 13h-20Z" fill="#bdcbb3" stroke="none"/>
+          <circle cx="82" cy="86" r="9" fill="#3b594c"/>
+          <circle cx="135" cy="86" r="9" fill="#3b594c"/>
+          <path d="M87 51v-6h18v6m-24 0h7v10h16V51h7v18H81Z" fill="#d3ddc9" stroke-width="2.5"/>
+        </g>
+        <path d="M18 92h34m-23 9h18" fill="none" stroke="#a8b9a0"/>
+      </g>
+      <text x="28" y="145" font-size="40" font-weight="600">Fulfill</text>
+      <text x="28" y="187" font-size="26" fill="#505c53">Shipping or pickup</text>
+    </g>
+  </g>
+</svg>

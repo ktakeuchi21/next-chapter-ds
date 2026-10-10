@@ -2,6 +2,10 @@
 
 An inventory and resale workspace that turns photos and voice notes into organized items, researched suggestions, and reviewed listing drafts.
 
+![Next Chapter illustrated workflow: capture a couch with photos and voice, identify it, compare prices, prepare reviewed listings, sell and sync, then arrange shipping or pickup. Automatic sale monitoring and delisting are marked as planned.](docs/images/workflow.svg)
+
+*The intended end-to-end workflow. Listing publication is assisted; automatic sale monitoring and delisting remain planned. Original vector illustration, using no client photos.*
+
 ## The problem
 
 Small downsizing and resale teams handle a difficult mix: unfamiliar objects, incomplete owner recollections, items stored in different places, and listings spread across marketplaces. Identifying an item, estimating its value, writing descriptions, finding it after a sale, and removing duplicate listings can become a collection of disconnected manual tasks.
